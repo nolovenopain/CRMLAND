@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1025517554750",
+    "firebase_url": "https://crmland-ee4a3.firebaseio.com",
+    "project_id": "crmland-ee4a3",
+    "storage_bucket": "crmland-ee4a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025517554750:android:176cfe17923f1c3bdd156f",
+        "android_client_info": {
+          "package_name": "com.vtechhomes.crmland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025517554750-76qnafppna9fbseeemduvqed8tup9qbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlf_xcKBP-WHmsAo8jiiBx1-ZVmSpjvXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025517554750-76qnafppna9fbseeemduvqed8tup9qbu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1025517554750-6qd2unlhcb3svs2mtetv3v811s2jekui.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vtechhomes.crmland"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

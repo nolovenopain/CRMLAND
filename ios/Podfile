@@ -1,8 +1,24 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'CRMLAND' do
-  # Pods for CRMLAND
+target 'CrmLand' do
+  # Required by RNFirebase
+  # Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  # Add the pod for Firebase Cloud Messaging
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Core', '~> 6.13.0'
+  pod 'Firebase/Database', '~> 6.13.0'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
+
+
+  post_install do |installer|
+    rnfirebase = installer.pods_project.targets.find { |target| target.name == 'RNFirebase' }
+    rnfirebase.build_configurations.each do |config|
+      config.build_settings['HEADER_SEARCH_PATHS'] = '$(inherited) ${PODS_ROOT}/Headers/Public/**'
+    end
+  end
+  # Pods for CrmLand
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -26,7 +42,7 @@ target 'CRMLAND' do
   pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
   pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
   pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
-  pod 'ReactCommon/jscallinvoker', :path => "../node_modules/react-native/ReactCommon"
+  pod 'ReactCommon/callinvoker', :path => "../node_modules/react-native/ReactCommon"
   pod 'ReactCommon/turbomodule/core', :path => "../node_modules/react-native/ReactCommon"
   pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
 
@@ -34,10 +50,23 @@ target 'CRMLAND' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+  # pod 'react-native-cameraroll', :path => '../node_modules/@react-native-community/cameraroll'
+
+  pod 'react-native-document-picker', :path => '../node_modules/react-native-document-picker'
 
 
 
-  target 'CRMLANDTests' do
+
+
+  # pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
+  target 'CrmLandTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -45,10 +74,10 @@ target 'CRMLAND' do
   use_native_modules!
 end
 
-target 'CRMLAND-tvOS' do
-  # Pods for CRMLAND-tvOS
+target 'CrmLand-tvOS' do
+  # Pods for CrmLand-tvOS
 
-  target 'CRMLAND-tvOSTests' do
+  target 'CrmLand-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

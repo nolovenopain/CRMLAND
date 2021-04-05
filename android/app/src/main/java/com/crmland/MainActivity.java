@@ -1,4 +1,4 @@
-package com.crmland;
+package com.vtechhomes.crmland;
 
 import com.facebook.react.ReactActivity;
 
@@ -9,7 +9,7 @@ public class MainActivity extends ReactActivity {
    * rendering of the component.
    */
   @Override
-  protected String getMainComponentName() {
-    return "CRMLAND";
-  }
+    protected String getMainComponentName() {
+        return "CrmLand";
+    }   
 }
